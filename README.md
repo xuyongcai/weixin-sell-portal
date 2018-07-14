@@ -18,11 +18,13 @@ Vue.js 高仿饿了么外卖 App 课程源码
         
         access_log D:\\nginx\\nginx-1.13.8\logs\access.log combined;
         location / {
+            #前端项目路径
             root   D:\wamp64\www\sell;
             index  index.html index.htm;   
         }
         
         location /sell/ {
+            #后端项目ip或域名地址
             proxy_pass http://127.0.0.1:8080/;     
         }
         
