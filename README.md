@@ -11,21 +11,37 @@ Vue.js 高仿饿了么外卖 App 课程源码
 
 # nginx的server配置
 server {
+
     listen       80;
+    
     #server_namet,添前端项目域名地址
+    
     server_name  vya8m7.natappfree.cc;
+    
     access_log D:\\nginx\\nginx-1.13.8\logs\access.log combined;
+   
     location / {
+    
         root   D:\wamp64\www\sell;
+        
         index  index.html index.htm;
+        
     }
-	location /sell/ {
+    
+	  location /sell/ {
+	  
         proxy_pass http://127.0.0.1:8080/;
-	}
-    error_page   500 502 503 504  /50x.html;
-    location = /50x.html {
-        root   html;
-    }
+        
+	  }
+	  
+     error_page   500 502 503 504  /50x.html;
+     
+     location = /50x.html {
+     
+          root   html;
+          
+     }
+     
 }
 
 
